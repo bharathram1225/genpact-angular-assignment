@@ -35,5 +35,22 @@ Finally run:- `npm start`
 
 ## Screenshots
 
+1. signup module
+
 ![image](https://user-images.githubusercontent.com/77728403/168585599-b54e5127-8b33-486d-ad29-3a7418d6a6b9.png)
+
+2. signin module
+
+![image](https://user-images.githubusercontent.com/77728403/168586082-98ace78a-6e21-406f-a6e5-7711e6f86021.png)
+
+3. reset password module
+
+![image](https://user-images.githubusercontent.com/77728403/168586208-6401bf3d-ef65-4d58-873f-15cbfd61471e.png)
+
+4. home module
+
+![image](https://user-images.githubusercontent.com/77728403/168586408-35ecf09b-6bcd-4296-a953-8b01ceb297ea.png)
+![image](https://user-images.githubusercontent.com/77728403/168586467-b80169e0-051b-46f1-b964-5de6671b0935.png)
+
+
 
