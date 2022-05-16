@@ -1,13 +1,13 @@
 # Trial
 # user deatails in card layout
 
-The enduser information are collected from a form,space storing information in the local storage of the crome broweser. The information in the browser is stored in the form of key-value pair.The value is the collection of objects that are collected from the form.
+The end-user information are collected from a form, space storing information in the local storage of the crome broweser. The information in the browser is stored in the form of key-value pair.The value is the collection of objects that are collected from the form.
 
 Each object from the local storage is grabed using `*ngFor` loop.
 
 Each card has two icon one for (edit) and (delete)
 
-##The functionality of each module as follows:-
+## The functionality of each module as follows:-
 
 1. Add - The button functionality is to add the fetch the details from the form and store it in the localStorage.
 
@@ -31,5 +31,11 @@ press `ctrl + shift +` or open a new terminal
 execute this command:- npm install
 
 Finally run:- npm start
+
+# Screenshot
+
+![image](https://user-images.githubusercontent.com/77728403/168591201-9b34d360-4f49-4efd-919e-6a598003efc2.png)
+![image](https://user-images.githubusercontent.com/77728403/168591250-01c0666a-987a-4a23-9d9d-478a92b6678e.png)
+
 
 
