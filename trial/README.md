@@ -6,7 +6,12 @@ The enduser information are collected from a form,space storing information in t
 Each object from the local storage is grabed using `*ngFor` loop.
 Each card has two icon one for (edit) and (delete)
 
+Add - The button functionality is to add the fetch the details from the form and store it in the localStorage.
+
 Edit - The object is the localStorage is been updated with the latest data based on the id henceforth the updated values is refflected on the browser.
+
 Delete - The cards that are renerd on the browser  are removed using the delete icon based on the index  of the object henceforth immdiately reflected on the browser.
+
+
 
 
