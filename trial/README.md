@@ -15,11 +15,11 @@ Each card has two icon one for (edit) and (delete)
 
 3. Delete - The cards that are renerd on the browser  are removed using the delete icon based on the index  of the object henceforth immdiately reflected on the browser.
 
-##To run the project
+## To run the project
 
 Download the project to your local machine.
 
-##prerequisite are:
+## prerequisite are:
 
     1. node has to be install in your machine
     2. Ensure npm is installed in your machine
