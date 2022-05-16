@@ -1,32 +1,5 @@
 # Project1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
 ## Registration form
 
 This project conatainss `signup` , `signin` , `reset` and `home` modules.
@@ -47,16 +20,16 @@ home module - On successfully login the end user is displayed with the user info
 
 Download the project to your local machine.
 
-## Preequistes are:
+## prerequisite are:
   1. node has to be install in your machine
   2. Ensure npm is installed in your machine
   3. Angular has to be installed in your local machine
 
 Open the project in vscode
 
-press `ctrl`+`shit`+` or open a new terminal
+press `ctrl + shift + ` or open a new terminal
 
-execute this command:- npm install
+execute this command:- `npm install`
 
-Finally run:- npm start 
+Finally run:- `npm start` 
 
