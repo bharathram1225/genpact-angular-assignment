@@ -1,0 +1,143 @@
+<router-outlet></router-outlet>
+<div class="container-fluid">
+  <app-header></app-header>
+
+
+  <h1>{{title | uppercase}}</h1>
+  <p>Salary = {{salary | currency:'USD':true:'0.4-6'}}</p>
+  <p>Package = {{package | currency:'USD':true:'0.3-6'}}</p>
+  <ul>
+    <h3>Date various formats </h3>
+    <li><p>current date = {{currentdate}}</p></li>
+    <li><p>date Short = {{currentdate | date:'short'}}</p></li>
+    <li><p>date pipeline = {{currentdate | date}}</p></li>
+  </ul>
+
+  <ul>
+    <h3>Accessing Object details </h3>
+    <li><p>Project name = {{project.name}}</p></li>
+    <li><p>Current Version = {{project.version}}</p></li>
+    <li><p>Project Start date = {{project.completiondate | date}}</p></li>
+  </ul>
+
+<button type="button" class="btn btn-primary" (click)="showAlert()">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+</div>
+
+
+<ul>
+  <h3 class="my-3">Collection of Object Stored in an Array</h3>
+<li *ngFor="let item of employees">{{item.name}} {{item.age}} {{item.college}} </li>
+</ul>
+
+<div [ngSwitch]="inputNo">
+  <div *ngSwitchCase="'1'">One</div>
+  <div *ngSwitchCase="'2'">Two</div>
+  <div *ngSwitchCase="'3'">Three</div>
+</div>
+
+<div *ngFor="let item of employees">
+  <div *ngIf="item.age>5">
+    <p>photo is null</p>
+  </div>
+</div>
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">UserName</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" #username>
+    
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="alertme(username)">Submit</button>
+</form>
+
+<div>
+  <input type="color" #clr (change)="changecolor(clr)">
+  <input type="range" min="0" max="100" value="50" #rng (change)="changerange(rng)">
+  <div [ngStyle]="{color:colorname, 'font-size.px':fontsize}">My Name is Bharath</div>
+</div>
+
+<button type="button" class="btn btn-primary" (click)="navigatetonext()">Route to About</button>
+
+<br><br>
+
+<form class="container-fluid rounded border border-warning mt-2 py-4 shadow p-3 mb-5 bg-white rounded" style="width: 50%;">
+  <div>
+    key name <input type="text" class="mx-3" name="keyname" #keyname placeholder="Enter the key..">
+  </div>
+  <div class="mt-2">
+    Value name<input type="text" class="mx-2" name="keyname" #keyvalue placeholder="Enter the value..">
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary" (click)="setlocalstorage(keyname,keyvalue)">SET LOCAL STORAGE</button>
+  <button type="button" class="btn btn-primary mx-3" (click)="getlocalstorage(keyname)">GET LOCAL STORAGE</button>
+</form>
+
+
+
+
+
+
+
+<form class="container-fluid rounded border border-warning mt-2 py-4 shadow p-3 mb-5 bg-white rounded" style="width: 50%;">
+  <div>
+    First Name <input type="text" class="mx-5" name="keyname" #fname placeholder="Enter the key..">
+  </div>
+  <div class="mt-2">
+    Last Name <input type="text" class="mx-5" name="keyname" #lname placeholder="Enter the value..">
+  </div>
+  <div class="mt-2">
+    Designation   <input type="text" class="mx-4" name="keyname" #designation placeholder="Enter the value..">
+  </div>
+  <div class="mt-2">
+    Mobile Number<input type="text" class="mx-2" name="keyname" #phone placeholder="Enter the value..">
+  </div>
+  <div class="mt-2">
+    Email i'd<input type="text" class="mx-5" name="keyname" #email placeholder="Enter the value..">
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary" (click)="addstorage(fname,lname,designation,phone,email)">ADD</button>
+  
+</form>
+
+
+
+
+
+
+<div>
+  <div class="row">
+    <div class="col-md-3 mt-4" *ngFor="let item of user">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1652345645898-dcc4aad9fb05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{item.fname}} {{item.lname}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">FName :- {{item.fname}}</li>
+            <li class="list-group-item">LName :- {{item.lname}}</li>
+            <li class="list-group-item">Designation :- {{item.designation}}</li>
+            <li class="list-group-item">mobile :- {{item.phone}}</li>
+            <li class="list-group-item">email :- {{item.email}}</li>
+            
+          <div class="d-inline align-auto my-2">
+            <button type="button" class="btn btn-primary mx-2" (click)="editstorage(item.id,fname.value,lname.value,designation.value,phone.value,email.value)">EDIT</button>
+            <button type="button" class="btn btn-primary mx-3" (click)="deletestorage(item.id)">DELETE</button>
+          </div>
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+</div>
