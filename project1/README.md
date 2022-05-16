@@ -33,3 +33,7 @@ execute this command:- `npm install`
 
 Finally run:- `npm start` 
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/77728403/168585599-b54e5127-8b33-486d-ad29-3a7418d6a6b9.png)
+
