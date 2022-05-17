@@ -1,27 +1,41 @@
 # Trial
+# user deatails in card layout
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+The end-user information are collected from a form, space storing information in the local storage of the crome broweser. The information in the browser is stored in the form of key-value pair.The value is the collection of objects that are collected from the form.
 
-## Development server
+Each object from the local storage is grabed using `*ngFor` loop.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Each card has two icon one for (edit) and (delete)
 
-## Code scaffolding
+## The functionality of each module as follows:-
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Add - The button functionality is to add the fetch the details from the form and store it in the localStorage.
 
-## Build
+2. Edit - The object is the localStorage is been updated with the latest data based on the id henceforth the updated values is refflected on the browser.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Delete - The cards that are renerd on the browser  are removed using the delete icon based on the index  of the object henceforth immdiately reflected on the browser.
 
-## Running unit tests
+## To run the project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Download the project to your local machine.
 
-## Running end-to-end tests
+## prerequisite are:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    1. node has to be install in your machine
+    2. Ensure npm is installed in your machine
+    3. Angular has to be installed in your local machine
+    4. Open the project in vscode
 
-## Further help
+press `ctrl + shift +` or open a new terminal
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+execute this command:- npm install
+
+Finally run:- npm start
+
+# Screenshot
+
+![image](https://user-images.githubusercontent.com/77728403/168591201-9b34d360-4f49-4efd-919e-6a598003efc2.png)
+![image](https://user-images.githubusercontent.com/77728403/168591250-01c0666a-987a-4a23-9d9d-478a92b6678e.png)
+
+
+
