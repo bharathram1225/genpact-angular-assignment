@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -31,4 +32,32 @@ export class SigninComponent implements OnInit {
       
     }
   }
+
+
+   // ^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$
+  mysigninform = new FormGroup({
+    "username": new FormControl("", Validators.compose([Validators.required,Validators.minLength(3)])),
+    "password": new FormControl("", Validators.compose([Validators.required])),
+    });
+    
+
+    onSubmit() {
+    console.log("reactive form submitted");
+    console.log(this.mysigninform.value);
+    console.log(this.mysigninform.get('username')?.value);
+    console.log(this.mysigninform.controls['username'].value);
+    console.log(this.mysigninform.controls['password'].value);
+
+    let user = this.getfromstorage();
+    let newuser = user.find((t:any)=>t.username == this.mysigninform.controls['username'].value && t.password==this.mysigninform.controls['password'].value);
+    console.log(newuser);
+    if(newuser){
+      alert(" user authenticated successfully!!");
+      this.router.navigate(['/home']);
+    }
+    else{
+      alert("invalid username and password!!");
+      
+    }
+    }
 }

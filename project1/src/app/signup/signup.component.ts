@@ -19,6 +19,15 @@ export class SignupComponent implements OnInit {
   }
 
   signup(username:any,password:any):any{
+
+  //   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(username.value))
+  // {
+  //   console.log("correct email");
+  // }
+  // else{
+  //   console.log("You have entered an invalid email address!");
+  // }
+
     let user = this.getfromstorage();
     localStorage.setItem('employee', JSON.stringify(
       [...user, {"id":(user.length === 0 ? 1 : user[user.length - 1].id + 1),"username":username.value,"password":password.value}]
@@ -26,5 +35,28 @@ export class SignupComponent implements OnInit {
     console.log(localStorage.getItem('student_user'));
     this.router.navigate(['/signin']);
   };
+
+
+  reg:any={
+    username:'',
+    password:'',
+    email:'',
+    phone:''
+
+    };
+    
+
+  onSubmitTemplateBasedsignup(reg:any){
+    let user = this.getfromstorage();
+    console.log(reg);
+    console.log(reg.username);
+    console.log(reg.password);
+    console.log(user);
+    localStorage.setItem('employee', JSON.stringify(
+      [...user, {"id":(user.length === 0 ? 1 : user[user.length - 1].id + 1),"email":reg.email,"username":reg.username,"password":reg.password,"phone":reg.phone}]
+    ));
+    console.log(localStorage.getItem('employee'));
+    this.router.navigate(['/signin']);
+  }
 
 }
