@@ -19,7 +19,17 @@ describe('SigninComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
+
+
+  // it('should create', () => {
+  //   let buttonElement = fixture.debugElement.nativeElement.querySelector('#loginbutton');
+  //   console.log("Button Elemenet",buttonElement)
+  //   expect(buttonElement.innerHTML).toBe('Login');
+  //   // buttonElement.
+  //   // expect(buttonElement.query).toContain('home works!');
+  //   });
+  
 });

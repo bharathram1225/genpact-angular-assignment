@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -9,7 +11,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -24,23 +26,24 @@ export class SigninComponent implements OnInit {
     let newuser = user.find((t:any)=>t.username == username.value && t.password==password.value);
     console.log(newuser);
     if(newuser){
-      alert(" user authenticated successfully!!");
+      this.snackBar.open("user authenticated successfully!!","cancel",{duration: 2000});
       this.router.navigate(['/home']);
     }
     else{
-      alert("invalid username and password!!");
+      
+      this.snackBar.open("invalid username and password!!","cancel",{duration: 2000});
       
     }
   }
 
 
-   // ^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$
+  
   mysigninform = new FormGroup({
     "username": new FormControl("", Validators.compose([Validators.required,Validators.minLength(3)])),
-    "password": new FormControl("", Validators.compose([Validators.required])),
+    "password": new FormControl("", Validators.compose([Validators.required, Validators.minLength(8)])),
     });
     
-
+    
     onSubmit() {
     console.log("reactive form submitted");
     console.log(this.mysigninform.value);
@@ -52,11 +55,11 @@ export class SigninComponent implements OnInit {
     let newuser = user.find((t:any)=>t.username == this.mysigninform.controls['username'].value && t.password==this.mysigninform.controls['password'].value);
     console.log(newuser);
     if(newuser){
-      alert(" user authenticated successfully!!");
+      this.snackBar.open("user authenticated successfully!!","cancel",{duration: 2000});
       this.router.navigate(['/home']);
     }
     else{
-      alert("invalid username and password!!");
+      this.snackBar.open("invalid username and password!!","cancel",{duration: 2000});
       
     }
     }

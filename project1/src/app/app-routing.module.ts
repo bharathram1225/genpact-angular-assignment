@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ResetComponent } from './reset/reset.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
 
 const routes: Routes = [
 
@@ -28,6 +29,10 @@ const routes: Routes = [
   path:'reset',
   component:ResetComponent
   },
+  {
+    path:'studentdetails/:id',
+    component:StudentdetailsComponent
+    },
 ];
 
 @NgModule({

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import {MatSnackBar} from '@angular/material/snack-bar';
+
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -8,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -46,17 +49,28 @@ export class SignupComponent implements OnInit {
     };
     
 
+  
+
   onSubmitTemplateBasedsignup(reg:any){
     let user = this.getfromstorage();
-    console.log(reg);
-    console.log(reg.username);
-    console.log(reg.password);
-    console.log(user);
-    localStorage.setItem('employee', JSON.stringify(
-      [...user, {"id":(user.length === 0 ? 1 : user[user.length - 1].id + 1),"email":reg.email,"username":reg.username,"password":reg.password,"phone":reg.phone}]
-    ));
-    console.log(localStorage.getItem('employee'));
-    this.router.navigate(['/signin']);
+    let checkusername = user.find((t:any)=>t.username==reg.username && t.email==reg.email);
+    if(checkusername){
+      this.snackBar.open("Username exist","cancel",{duration: 1000});
+      
+    }
+    else
+    {
+      console.log(reg);
+      console.log(reg.username);
+      console.log(reg.password);
+      console.log(user);
+      localStorage.setItem('employee', JSON.stringify(
+        [...user, {"id":(user.length === 0 ? 1 : user[user.length - 1].id + 1),"email":reg.email,"username":reg.username,"password":reg.password,"phone":reg.phone}]
+      ));
+      console.log(localStorage.getItem('employee'));
+      this.snackBar.open("Registered Successfully","cancel",{duration: 2000});
+      this.router.navigate(['/signin']);
+    }
   }
 
 }

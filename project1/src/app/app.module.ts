@@ -11,6 +11,12 @@ import { HeaderComponent } from './header/header.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
+import { RegisterComponent } from './register/register.component';
+import { Router } from '@angular/router';
 
 
 @NgModule({
@@ -20,14 +26,21 @@ import { SignupComponent } from './signup/signup.component';
     ResetComponent,
     HeaderComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    StudentdetailsComponent,
+    RegisterComponent
   ],
   imports: [
     
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    BrowserAnimationsModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
