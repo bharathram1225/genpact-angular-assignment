@@ -1,27 +1,53 @@
 # Project1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+## Registration form
 
-## Development server
+This project conatainss `signup` , `signin` , `reset` and `home` modules.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The end user information is stored in the localStorage of the browser.
 
-## Code scaffolding
+The functionality of each module as follows:-
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+signup module - The user is launched with signup module, The end user has to create an account.
 
-## Build
+signin module - The user has to authenticate with the username and  password.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+reset module - The user can reset their information through this module.
 
-## Running unit tests
+home module - On successfully login the end user is displayed with the user information in card layout and carousel. The user can manage the cards.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## to run the project
 
-## Running end-to-end tests
+Download the project to your local machine.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## prerequisite are:
+  1. node has to be install in your machine
+  2. Ensure npm is installed in your machine
+  3. Angular has to be installed in your local machine
 
-## Further help
+Open the project in vscode
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+press `ctrl + shift + ` or open a new terminal
+
+execute this command:- `npm install`
+
+Finally run:- `npm start` 
+
+## Screenshots
+
+1. signup module
+
+![image](https://user-images.githubusercontent.com/77728403/168585599-b54e5127-8b33-486d-ad29-3a7418d6a6b9.png)
+
+2. signin module
+
+![image](https://user-images.githubusercontent.com/77728403/168586082-98ace78a-6e21-406f-a6e5-7711e6f86021.png)
+
+3. reset password module
+
+![image](https://user-images.githubusercontent.com/77728403/168586208-6401bf3d-ef65-4d58-873f-15cbfd61471e.png)
+
+4. home module
+
+![image](https://user-images.githubusercontent.com/77728403/168586408-35ecf09b-6bcd-4296-a953-8b01ceb297ea.png)
+![image](https://user-images.githubusercontent.com/77728403/168586467-b80169e0-051b-46f1-b964-5de6671b0935.png)
