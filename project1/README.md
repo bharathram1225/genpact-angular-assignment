@@ -16,6 +16,8 @@ reset module - The user can reset their information through this module.
 
 home module - On successfully login the end user is displayed with the user information in card layout and carousel. The user can manage the cards.
 
+Student Details Module - Click of any card that are displayed on the home module will route to the studentdetails. This will show the student details of the specific card or the student.
+
 ## to run the project
 
 Download the project to your local machine.
@@ -51,3 +53,7 @@ Finally run:- `npm start`
 
 ![image](https://user-images.githubusercontent.com/77728403/168586408-35ecf09b-6bcd-4296-a953-8b01ceb297ea.png)
 ![image](https://user-images.githubusercontent.com/77728403/168586467-b80169e0-051b-46f1-b964-5de6671b0935.png)
+
+5. Student Details Module
+
+![image](https://user-images.githubusercontent.com/77728403/169038749-6cf6e560-1b98-4c94-b198-81ba15bc5261.png)
