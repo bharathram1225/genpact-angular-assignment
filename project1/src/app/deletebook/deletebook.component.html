@@ -1,0 +1,19 @@
+<h1 mat-dialog-title [ngStyle]="styleheader">Delete Course</h1>
+<div mat-dialog-content>Delete Course andd Author based on <b>ID</b> </div>
+<div mat-dialog-content class="my-3" >
+    <form #myDeleteForm="ngForm" style="height: 128px;" (ngSubmit)="onSubmitTemplateBasedDelete(myDeleteForm.value)">
+    <mat-form-field class="formwidth" appearance="legacy">
+        <mat-label>Course ID</mat-label>
+        <input matInput [(ngModel)]="course.id" name="id" placeholder="Eg. 24">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Enter the course ID</mat-hint>
+    </mat-form-field>
+    <div mat-dialog-actions>
+        <button type="submit"  mat-dialog  class="btn btn-danger ms-2"><i class="bi-trash"></i></button>
+        <button type="button"  mat-dialog-close class="btn btn-primary ms-3"><i class="bi-x-lg"></i></button>
+        
+      </div>
+   </form>
+</div>
+
+

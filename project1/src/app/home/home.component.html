@@ -15,6 +15,9 @@
         <li class="nav-item">
             <a class="nav-link" href="/signin">Login</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/courses">Courses</a>
+      </li>
 
       </ul>
       <form class="form-inline my-5 my-lg-0">
@@ -64,15 +67,36 @@
             <div class="card" style="width: 18rem;">
               <a href="/studentdetails/{{item.id}}"><img class="card-img-top" src="https://images.unsplash.com/photo-1652345645898-dcc4aad9fb05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="Card image cap"></a>
               <div class="card-body">
-                <h5 class="card-title">{{item.fname}} {{item.lname}}</h5>
+                <h4 class="card-title font-weight-bold">{{item.fname}} {{item.lname}}</h4>
               </div>
               <ul class="list-group list-group-flush">
                 
-                <li class="list-group-item">F-Name :- {{item.fname}}</li>
-                <li class="list-group-item">L-Name :- {{item.lname}}</li>
-                <li class="list-group-item">Designation :- {{item.designation}}</li>
-                <li class="list-group-item">mobile :- {{item.phone}}</li>
-                <li class="list-group-item">email :- {{item.email}}</li>
+                <div class="container">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Id</th>
+                        <td>{{item.id}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">First Name</th>
+                        <td>{{item.fname}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Last Name</th>
+                        <td>{{item.lname}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Designation</th>
+                        <td>{{item.designation}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Phone Number</th>
+                        <td>{{item.phone}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 
               <div class="d-inline align-auto my-2">
                 <button type="button" class="btn btn-primary mx-2"><i class="bi bi-pen"></i></button>
@@ -85,3 +109,4 @@
       </div>
     </div>
   </div>
+

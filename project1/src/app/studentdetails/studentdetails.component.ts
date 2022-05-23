@@ -29,9 +29,4 @@ export class StudentdetailsComponent implements OnInit {
     let users = localStorage.getItem("employee_user");
     return (users === null ? [] :JSON.parse(users));
   }
-
-  
-  
-  
-
 }

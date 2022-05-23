@@ -1,0 +1,172 @@
+<app-header></app-header>
+
+
+
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h1 class="paneltextcenter1 font-weight-bold pt-3">Course Details & Authors</h1>
+        
+        <button type="button" mat-raised-button color="accent" class="btn btn-warning btn-lg ms-2 book_add_btn" (click)="openDailog()"><mat-icon>delete_outline</mat-icon> Delete</button>
+        <a href="/addbook" type="button" mat-raised-button color="accent" class="btn btn-warning btn-lg ms-2 book_add_btn1" ><mat-icon>library_add</mat-icon> Add</a>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3 class="paneltextcenter">Currently I am {{panelOpenState ? 'opened,' : 'closed,'}} click me <span class="material-icons">
+          touch_app
+          </span> to {{panelOpenState ? 'close' : 'open'}}</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="container" [ngStyle]="{'width.%':40, 'margin-left.rem':32.5}">
+      <form #myCourseForm="ngForm" (ngSubmit)="onSubmitTemplateBasedcourse(myCourseForm.value)">
+        <div class="row">
+          <div class="col-md-6">
+            
+              <mat-form-field class="formwidth" appearance="legacy">
+                  <mat-label>course</mat-label>
+                  <input matInput [(ngModel)]="course.name" name="name" placeholder="what you need {{bike}} ?">
+                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                  <mat-hint>Enter the context to display</mat-hint>
+              </mat-form-field>
+          
+          </div>
+          <div class="col-md-6">
+            <button type="submit" id="submitbtn" mat-raised-button color="accent" class="btn btn-warning btn-lg ms-2">trigger</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="card">
+        <h1>Course Data</h1>
+        <form #myCourseForm="ngForm" (ngSubmit)="onSubmitTemplateBasedcourse(myCourseForm.value)">
+            <mat-form-field class="formwidth" appearance="legacy">
+                <mat-label>Legacy form field</mat-label>
+                <input matInput [(ngModel)]="course.name" name="name" placeholder="what you need ?">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="formwidth" appearance="legacy">
+                <mat-label>Legacy form field</mat-label>
+                <input matInput [(ngModel)]="course.id" name="id" placeholder="enter the id">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+
+            <button type="submit" id="submitbtn" mat-raised-button color="accent" class="btn btn-warning btn-lg ms-2">trigger</button>  
+            {{course | json}}
+            
+        </form>
+    </div>
+</div> -->
+
+
+
+
+<!-- courses ka cards -->
+<div class="container">
+    <div>
+      <div class="row">
+        <div class="col-md-4 mt-4" *ngFor="let item of coursedata; index as j">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{item.title}}</mat-card-title>
+                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <a href="/studentdetails/{{item.id}}"><img mat-card-image src="https://images.unsplash.com/photo-1652345645898-dcc4aad9fb05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="Card image cap"></a>
+
+                <div style="text-align: center;">
+                  <button mat-icon-button  color="accent" *ngFor="let r of ratingArr; index as i" (click)="onClick(i,j)">
+                    <mat-icon>
+                        {{ returnStar(i,j) }}
+                    </mat-icon>
+                  </button>
+                </div>
+                
+                <mat-tab-group animationDuration="2000ms" >
+                    <mat-tab label="Books"> 
+                        <mat-card-content>
+                  
+                            <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">Id</th>
+                                    <td>{{item.id}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Description</th>
+                                    <td>{{item.discription}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Title</th>
+                                    <td>{{item.title}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                          
+                        </mat-card-content>
+                    </mat-tab>
+                    <mat-tab label="Author">
+                        <mat-card-content>
+                  
+                            <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">Id</th>
+                                    <td>{{item.author.author_id}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Name</th>
+                                    <td>{{item.author.author_name}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Language</th>
+                                    <td>{{item.author.language}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                          
+                        </mat-card-content>
+                    </mat-tab>
+                    
+                </mat-tab-group>
+                
+                
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+
+
+
+
+  
+
+
+ 

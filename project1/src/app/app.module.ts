@@ -15,8 +15,23 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
-import { RegisterComponent } from './register/register.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 import { Router } from '@angular/router';
+import { CourseComponent } from './course/course.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddbookComponent } from './addbook/addbook.component';
+import { DeletebookComponent } from './deletebook/deletebook.component';
 
 
 @NgModule({
@@ -28,7 +43,9 @@ import { Router } from '@angular/router';
     SigninComponent,
     SignupComponent,
     StudentdetailsComponent,
-    RegisterComponent
+    CourseComponent,
+    AddbookComponent,
+    DeletebookComponent
   ],
   imports: [
     
@@ -38,7 +55,20 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatIconModule,
+    HttpClientModule,
+    MatCardModule,
+    MatProgressBarModule,
+    MatTabsModule,
+    MatTableModule,
+    NgxStarRatingModule,
+    MatExpansionModule,
+    MatDialogModule
     
     
   ],

@@ -50,49 +50,31 @@
                 <div class="card-body p-md-5 text-black"> 
                   <!-- <form [formGroup]="mysigninform" (ngSubmit)="onSubmit()"> -->
                     <h1 class="mb-5 text-uppercase"> Student Information </h1>  
-                    <div class="row">  
-                      <div class="col-md-6 mb-4">  
-                        <div class="form-outline">  
-                          <h2>Student Id :-<span style="font-size: 20px;">{{individualstudent.id}}</span></h2>
-                           
-                        </div>  
-                      </div>   
-                    </div>  
-                    <div class="row">  
-                      <div class="col-md-6 mb-4">  
-                        <div class="form-outline">  
-                          
-                          <h2>Student First Name :-<span style="font-size: 20px;">{{individualstudent.fname}}</span></h2>
-                           
-                        </div>  
-                      </div>    
-                    </div>  
-
-                    <div class="row">  
-                      <div class="col-md-6 mb-4">  
-                        <div class="form-outline">  
-                          
-                          <h2>Student Last Name :-<span style="font-size: 20px;">{{individualstudent.lname}}</span></h2>
-                        </div>  
-                      </div>    
-                    </div>  
-
-                    <div class="row">  
-                      <div class="col-md-6 mb-4">  
-                        <div class="form-outline">  
-                          
-                          <h2>Student Designation :-<span style="font-size: 20px;">{{individualstudent.designation}}</span></h2>
-                        </div>  
-                      </div>    
-                    </div>
-
-                    <div class="row">  
-                      <div class="col-md-6 mb-4">  
-                        <div class="form-outline">  
-                          
-                          <h2>Student Phone :-<span style="font-size: 20px;">{{individualstudent.phone}}</span></h2>
-                        </div>  
-                      </div>    
+                    <div class="container">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Id</th>
+                            <td>{{individualstudent.id}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">First Name</th>
+                            <td>{{individualstudent.fname}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Last Name</th>
+                            <td>{{individualstudent.lname}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Designation</th>
+                            <td>{{individualstudent.designation}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Phone Number</th>
+                            <td>{{individualstudent.phone}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     
                     <div class="d-flex justify-content-end pt-3">  
@@ -107,3 +89,11 @@
       </div>  
     </div>  
   </section>  
+
+
+
+  <h2>Student Id :-<span style="font-size: 20px;">{{individualstudent.id}}</span></h2>
+  <h2>Student First Name :-<span style="font-size: 20px;">{{individualstudent.fname}}</span></h2>
+  <h2>Student First Name :-<span style="font-size: 20px;">{{individualstudent.lname}}</span></h2>
+  <h2>Student Designation :-<span style="font-size: 20px;">{{individualstudent.designation}}</span></h2>
+  <h2>Student Phone :-<span style="font-size: 20px;">{{individualstudent.phone}}</span></h2>

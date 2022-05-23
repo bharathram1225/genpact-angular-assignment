@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="style-header">
+          Add Books and Author
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+
+      
+<div class="container-fluid bg-black">
+    <form #myAddBook="ngForm" (ngSubmit)="onSubmitTemplateBasedAddBook(myAddBook.value)">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card p-3 my-3">
+                    <h1 [style.text-align]="'center'">Books Details</h1>     
+                        <mat-form-field class="formwidth p-2" appearance="legacy">
+                            <mat-label>Title</mat-label>
+                            <input matInput [(ngModel)]="addbook.title" name="title" #title placeholder="Eg. wonders of the sea" required>
+                            <mat-icon matSuffix [style.color]="title.value==''?'red':'blue'">book</mat-icon>
+                            <mat-hint>Enter Book Title</mat-hint>
+                        </mat-form-field>
+            
+                        <mat-form-field class="formwidth p-2" appearance="legacy">
+                            <mat-label>Description</mat-label>
+                            <input matInput [(ngModel)]="addbook.discription" name="discription" #discription placeholder="Eg. Story of Ocean" required>
+                            <mat-icon matSuffix [style.color]="discription.value==''?'red':'blue'">text_rotation_none</mat-icon>
+                            <mat-hint>Enter Book Description</mat-hint>
+                        </mat-form-field>        
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container-button">
+                    <button type="submit" id="submitbtn" mat-raised-button color="accent" class="btn btn-warning btn-lg ms-2 mt-1 mr-3" [disabled]="!myAddBook.valid">trigger</button>  
+                    <a href="/courses" type="button" id="submitbtn" mat-raised-button color="accent" class="btn btn-warning btn-lg ms-2 mt-1 ml-3" [disabled]="!myAddBook.valid">View</a> 
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 my-3">
+                    <h1 [style.text-align]="'center'">Author Details</h1>
+                        <mat-form-field class="formwidth p-2" appearance="legacy">
+                            <mat-label>Author Name</mat-label>
+                            <input matInput [(ngModel)]="addbook.author.author_name" name="author_name" placeholder="Eg. Rickey pointing" #author_name required>
+                            <mat-icon matSuffix [style.color]="author_name.value==''?'red':'blue'">person_pin</mat-icon>
+                            <mat-hint>Enter Author Name</mat-hint>
+                        </mat-form-field>
+            
+                        <mat-form-field class="formwidth p-2" appearance="legacy">
+                            <mat-label>Language</mat-label>
+                            <input matInput [(ngModel)]="addbook.author.language" name="language" #language placeholder="Eg. Spanish" required>
+                            <mat-icon matSuffix [style.color]="language.value==''?'red':'blue'">language</mat-icon>
+                            <mat-hint>Enter the Language</mat-hint>
+                        </mat-form-field>        
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<div>
+    <img class="d-block w-100" src="https://source.unsplash.com/1600x365/?library,book" alt="First slide">
+  </div>
