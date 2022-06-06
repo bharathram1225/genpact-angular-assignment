@@ -10,6 +10,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class DeletebookComponent implements OnInit {
 
   baseURL: string = "http://localhost:8080/courses";
+  // baseURL: string = "http://ec2-13-234-118-248.ap-south-1.compute.amazonaws.com:8080/courses";
+  
 
   course:any = {
     id:''

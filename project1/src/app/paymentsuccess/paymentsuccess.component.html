@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="popup">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbQpfOuwFMM_3buW8YTclDBbusExQN9_32MNBSU9hSA3dEDP0icBXmkW5wwq5_U6aOsyQ&usqp=CAU" width="100px" height="100px">
+        <h2>Thank You</h2>
+        <p>Your have Successfully Purchased the course !!</p>
+        <table class="table">
+            <tbody>
+                <tr>
+                  <th>Name</th>
+                    <td>1</td>
+        
+                </tr>
+                <tr>
+                  <th>Oder ID</th>
+                    <td>{{this.payment_payment_id}}</td>
+        
+                </tr>
+                <tr>
+                  <th>Payment ID</th>
+                    <td>{{payment_payment_id}}</td>
+        
+                </tr>
+              <tr>
+                  <th>Payment signature</th>
+                      <td>johncarter@mail.com</td>
+        
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" (click)="back()">OK</button>
+    </div>
+</div>

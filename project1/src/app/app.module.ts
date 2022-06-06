@@ -25,6 +25,7 @@ import {MatTableModule} from '@angular/material/table';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 import { Router } from '@angular/router';
@@ -32,6 +33,8 @@ import { CourseComponent } from './course/course.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddbookComponent } from './addbook/addbook.component';
 import { DeletebookComponent } from './deletebook/deletebook.component';
+import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
+import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { DeletebookComponent } from './deletebook/deletebook.component';
     StudentdetailsComponent,
     CourseComponent,
     AddbookComponent,
-    DeletebookComponent
+    DeletebookComponent,
+    CoursedetailsComponent,
+    PaymentsuccessComponent
   ],
   imports: [
     
@@ -68,7 +73,8 @@ import { DeletebookComponent } from './deletebook/deletebook.component';
     MatTableModule,
     NgxStarRatingModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule
     
     
   ],

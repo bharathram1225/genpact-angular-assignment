@@ -88,12 +88,13 @@
                   <mat-card-title>{{item.title}}</mat-card-title>
                   <mat-card-subtitle>Dog Breed</mat-card-subtitle>
                 </mat-card-header>
-                <a href="/studentdetails/{{item.id}}"><img mat-card-image src="https://images.unsplash.com/photo-1652345645898-dcc4aad9fb05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="Card image cap"></a>
+                <a href="/coursedetails/{{item.id}}"><img mat-card-image *ngFor="let source of sources" src="{{source}}" alt="Card image cap"></a>
 
                 <div style="text-align: center;">
                   <button mat-icon-button  color="accent" *ngFor="let r of ratingArr; index as i" (click)="onClick(i,j)">
                     <mat-icon>
                         {{ returnStar(i,j) }}
+                        {{i}}
                     </mat-icon>
                   </button>
                 </div>
@@ -148,8 +149,13 @@
                 
                 
                 <mat-card-actions>
-                  <button mat-button>LIKE</button>
+                  <button mat-button>LIKE </button>
                   <button mat-button>SHARE</button>
+                  <span [style.float]="'right'">
+                    <mat-icon matBadge={{likesotrearray[j]}}  (click)="callmebefore(j,item.id)" matBadgeColor="warn"><span class="bi bi-heart-fill"  [ngStyle]="{'color':'purple'}"> </span></mat-icon>
+                      <span class="cdk-visually-hidden">
+                      </span>
+                    </span>
                   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
                 </mat-card-actions>
               </mat-card>

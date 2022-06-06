@@ -12,23 +12,29 @@ import { DeletebookComponent } from '../deletebook/deletebook.component';
 })
 export class CourseComponent implements OnInit {
 
+  likesotrearray:any;
   bike='man';
+  value_like = 0;
   panelOpenState = false;
   private baseurl:string= 'http://localhost:8080'; 
+  // private baseurl:string= 'http://ec2-13-234-118-248.ap-south-1.compute.amazonaws.com:8080'; 
 
   course:any={
     name:'',
     id:'',
     };
 
+
+
   constructor(private http:HttpClient,private snackBar: MatSnackBar,public dialog: MatDialog) 
   {
+
     this.ratingArr = Array(this.starCount).fill(false);
     
   }
 
   ngOnInit(): void {
-    
+    var data_length:any;
   }
 
   public sendGetRequest(courses:any){
@@ -36,13 +42,20 @@ export class CourseComponent implements OnInit {
     return this.http.get(`${this.baseurl}/${data}`);
   }
 
+  hellobro(){
+    console.log("clicked");
+    
+  }
   
   coursedata:any;
+  data_length:any;
   onSubmitTemplateBasedcourse(course:any){
     if(course.name == 'courses'){
       var result = this.sendGetRequest(course.name).subscribe((data:any)=>{
         this.coursedata = data;
+        this.likesotrearray=Array(data.length).fill(0);
         this.snackBar.open("Book searched Successfully !! !!","cancel",{duration: 3000});
+
         },
         (error)=>{
           console.log(error.status);
@@ -50,15 +63,7 @@ export class CourseComponent implements OnInit {
         }
         );
   
-        console.log(this.coursedata);
-        // for (const element of this.coursedata) {
-        //   console.log("id: "+element.id);
-        //   console.log("discription :-"+element.discription);
-        //   console.log("author id :-"+element.author.author_id);
-        //   console.log("author name :-"+element.author.author_name);
-        //   console.log("language :-"+element.author.language);
-  
-        // }
+        console.log(this.coursedata);     
 
     }
     else if(course.name == 'courses' && course.id){
@@ -81,13 +86,6 @@ export class CourseComponent implements OnInit {
   ratingArr: boolean[] = []; // true = solid star; false = empty star
 
   snackBarDuration = 1000;
-  response = [
-    'You broke my heart!',
-    'Really?',
-    'We will do better next time.',
-    'Glad you like it!',
-    'Thank you so much!'
-  ]
 
   returnStar(i: number,j:number) {
     
@@ -100,16 +98,63 @@ export class CourseComponent implements OnInit {
 
   onClick(i: number,j:number) {
     this.rating[j] = i + 1;
+    console.log(j);
+    console.log(this.rating);
+    console.log(i);
 
   }
-
-
 
   openDailog(){
     this.dialog.open(DeletebookComponent, );
   }
 
+
+  callmebefore(j:any, id:any){
+    console.log(this.coursedata.length);
+    
+    console.log("likestorearray ",this.likesotrearray);
+    
+    this.callmefast(j,id,this.likesotrearray);
+  }
+
+  
+  callmefast(j:any, id:any,likesotrearray:any){
+
+    console.log("index ",j);
+    console.log("id ", id);
+    if(id == this.coursedata[j].id){
+      
+      // console.log("like value ",this.likevalue," index ",j);
+      likesotrearray[j] = likesotrearray[j]+1;
+      console.log(likesotrearray[j]);
+      
+      console.log(likesotrearray);
+      
+    }
+    else{
+      
+    }
+
+    
+    
+
+    
+  }
+
+
+
+  sources = [
+    'https://source.unsplash.com/1600x900/?book,book?random=1',
+    // 'https://source.unsplash.com/1600x900/?book,students',
+    // 'https://source.unsplash.com/1600x900/?lovers,book',
+    // 'https://source.unsplash.com/1600x900/?book,book',
+    // 'https://source.unsplash.com/1600x900/?book,gods',
+    // 'https://source.unsplash.com/1600x900/?soliders,book',
+    // 'https://source.unsplash.com/1600x900/?book,book',
+  ]
 }
+
+
 
 
 

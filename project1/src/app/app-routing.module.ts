@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddbookComponent } from './addbook/addbook.component';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
+import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
 import { HomeComponent } from './home/home.component';
+import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 import { ResetComponent } from './reset/reset.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -43,6 +45,14 @@ const routes: Routes = [
     path:'studentdetails/:id',
     component:StudentdetailsComponent
   },
+  {
+    path:'coursedetails/:id',
+    component:CoursedetailsComponent
+  },
+  {
+    path:'paymentsuccess',
+    component:PaymentsuccessComponent
+  }
 ];
 
 @NgModule({

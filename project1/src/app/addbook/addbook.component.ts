@@ -13,6 +13,7 @@ export class AddbookComponent implements OnInit {
 
 
   baseURL: string = "http://localhost:8080/courses";
+  // baseURL: string = "http://ec2-13-234-118-248.ap-south-1.compute.amazonaws.com:8080/courses";
   headermargin = 'ml-4';
   panelOpenState = true;
 
@@ -27,7 +28,6 @@ export class AddbookComponent implements OnInit {
 
   public sendGetRequest(book:any){
     const headers = { 'content-type': 'application/json'} 
-
     return this.http.post(this.baseURL,book,{'headers':headers});
   }
 
@@ -55,10 +55,6 @@ export class AddbookComponent implements OnInit {
       
 
   }
-
-
-
-  
 
   constructor(private http:HttpClient,private snackBar: MatSnackBar) { }
 

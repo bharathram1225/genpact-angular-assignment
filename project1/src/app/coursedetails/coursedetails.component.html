@@ -40,7 +40,7 @@
             <div class="row g-0">  
               <div class="col-xl-6 d-none d-xl-block">  
                 <img  
-                  src="https://source.unsplash.com/1600x900/?nature,people"  
+                  src="https://source.unsplash.com/1600x900/?books,books"  
                   alt="Sample photo"  
                   class="img-fluid"  
                   style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"  
@@ -49,38 +49,47 @@
               <div class="col-xl-6">  
                 <div class="card-body p-md-5 text-black"> 
                   <!-- <form [formGroup]="mysigninform" (ngSubmit)="onSubmit()"> -->
-                    <h1 class="mb-5 text-uppercase"> Student Information </h1>  
+                    <h1 class="mb-5 text-uppercase"> Course & Author Information </h1>  
                     <div class="container">
                       <table class="table">
                         <tbody>
                           <tr>
-                            <th scope="row">Id</th>
-                            <td>{{individualstudent.id}}</td>
+                            <th scope="row">Course ID</th>
+                            <td>{{this.courseauthordetails.id}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">First Name</th>
-                            <td>{{individualstudent.fname}}</td>
+                            <th scope="row">Author ID</th>
+                            <td>{{this.courseauthordetails.author.author_id}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Last Name</th>
-                            <td>{{individualstudent.lname}}</td>
+                            <th scope="row">Title</th>
+                            <td>{{this.courseauthordetails.title}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Description</th>
+                            <td>{{this.courseauthordetails.discription}}</td>
                           </tr>
                           <tr>
                             <th scope="row">Designation</th>
-                            <td>{{individualstudent.designation}}</td>
+                            <td>{{this.courseauthordetails.author.author_name}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Phone Number</th>
-                            <td>{{individualstudent.phone}}</td>
+                            <th scope="row">Language</th>
+                            <td>{{this.courseauthordetails.author.language}}</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
+                      <form [formGroup]="mydonateform" (ngSubmit)="ondenote()">
+                      
+                      <h3 class="my-2">Denoate US</h3>
+                      <input type="text" name="donate" formControlName="donate" class="form-control form-control-lg" [placeholder]="'Enter amount in rs...'"/>  
                     
                     <div class="d-flex justify-content-end pt-3">  
-                      <a type="submit" mat-raised-button href="/home" class="btn btn-warning btn-lg ms-2"> Back </a>  
+                      <a type="submit" mat-raised-button href="/courses" class="btn btn-warning btn-lg ms-2"> Back </a>  
+                      <button type="submit" class="btn btn-warning btn-lg ms-2" id="donatebtn" [disabled]="!mydonateform.valid">donate</button>  
                     </div>  
-                  <!-- </form>  -->
+                  </form> 
                 </div>  
               </div>  
             </div>  
@@ -89,6 +98,4 @@
       </div>  
     </div>  
   </section>  
-
-
 
